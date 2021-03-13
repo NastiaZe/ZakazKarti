@@ -17,6 +17,6 @@ public class ApplicationFormTest {
         form.$(cssSelector("[type='tel']")).sendKeys("+79035648978");
         form.$(cssSelector("[data-test-id=agreement]")).click();
         form.$(cssSelector("[type='button']")).click();
-        $("[data-test-id=order-success]").shouldHave(Condition.exactText("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время."));
+        $("[data-test-id=order-success]").shouldHave(Condition.exactText("Ваша заявка успешно отправлена!"));
     }
 }
