@@ -5,25 +5,21 @@ plugins {
 group 'ru.netology'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = 11
-compileJava.options.encoding = 'UTF-8'
-compileTestJava.options.encoding = 'UTF-8'
+sourceCompatibility = 1.8
 
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
-    implementation 'junit:junit:4.12'
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.7.1'
-    testImplementation 'com.codeborne:selenide:5.19.0'
-    testImplementation group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.30'
-
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.7.0'
+    testImplementation 'com.codeborne:selenide:5.17.4'
 }
 
 test {
     useJUnitPlatform()
-    // в тестах, вызывая `gradlew test -Dselenide.headless=true` будем передавать этот параметр в JVM (где его подтянет Selenide)
     systemProperty 'selenide.headless', System.getProperty('selenide.headless')
 }
