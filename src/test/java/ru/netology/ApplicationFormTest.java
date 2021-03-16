@@ -12,27 +12,7 @@ public class ApplicationFormTest {
         open("http://localhost:9999");
     }
 
-    @Test
-    public void shouldReturnSuccessfullyForm() {
-
-        $(".form_theme_alfa-on-white");
-        $("[data-test-id=name] input").setValue("Пугачева Алла");
-        $("[data-test-id=phone] input").setValue("+7963221123");
-        $("[data-test-id=agreement]").click();
-        $("[type=button]").click();
-        $("[data-test-id=order-success]").shouldHave(exactText("Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время."));
-    }
-
-    @Test
-    public void shouldReturnErrorIfInvalidName() {
-
-        $(".form_theme_alfa-on-white");
-        $("[data-test-id=name] input").setValue("Max");
-        $("[data-test-id=phone] input").setValue("+79875554123");
-        $("[data-test-id=agreement]").click();
-        $("[type=button]").click();
-        $(".input_type_text .input__sub").shouldHave(exactText("Имя и Фамилия указаны неверно. Допустимы только русские буквы, пробелы и дефисы."));
-    }
+    
 
     @Test
     public void shouldReturnErrorIfInvalidTel() {
